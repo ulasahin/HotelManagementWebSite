@@ -1,0 +1,19 @@
+.background {
+    background-image: url('../../public/image1.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .show-hotel-info .background {
+    background-image: url('../../public/image1.webp');
+  }
+  

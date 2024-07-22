@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Our Rooms</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let room of rooms">
+      <div class="card mb-4">
+        <img [src]="room.imageUrl" class="card-img-top" [alt]="room.type">
+        <div class="card-body">
+          <h5 class="card-title">{{ room.type }}</h5>
+          <p class="card-text">{{ room.description }}</p>
+          <p class="card-text"><strong>Price: {{ room.price}}</strong></p>
+          <button class="btn btn-primary" (click)="reserveRoom(room.id)">Rezervasyon Yap</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

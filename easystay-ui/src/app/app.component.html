@@ -1,0 +1,7 @@
+<div class="background" [ngClass]="{'show-hotel-info': showHotelInfo}">
+    <app-navbar (hotelInfoClicked)="toggleHotelInfo()"></app-navbar>
+    <router-outlet></router-outlet>
+    <div class="content" *ngIf="showHotelInfo">
+      <app-hotel-info></app-hotel-info>
+    </div>
+  </div>

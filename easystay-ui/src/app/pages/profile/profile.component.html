@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-circle img-fluid mb-3">
+            <h3>{{ firstName }}</h3>
+            <p>{{ email }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Profile Details</h5>
+            <form *ngIf="isEditing" (ngSubmit)="saveProfile(f)" #f="ngForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" [(ngModel)]="firstName" name="username" class="form-control" id="username" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="isEditing = false">Cancel</button>
+            </form>
+            <div *ngIf="!isEditing">
+              <p class="card-text"><strong>Username:</strong> {{ firstName }}</p>
+              <p class="card-text"><strong>Email:</strong> {{ email }}</p>
+              <!-- Diğer profil bilgileri burada yer alabilir -->
+              <button class="btn btn-primary" (click)="editProfile()">Edit Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
