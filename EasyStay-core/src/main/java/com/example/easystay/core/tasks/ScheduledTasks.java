@@ -43,7 +43,7 @@ public class ScheduledTasks {
     }
     // Business Rules
     private void markRoomAsAvailable(Long roomId) {
-        Room room = roomRepository.findById(roomId).orElseThrow(() -> new BusinessException(ErrorMessages.USER_NOT_FOUND));
+        Room room = roomRepository.findById(roomId).orElseThrow(() -> new BusinessException(ErrorMessages.ROOM_NOT_FOUND));
         room.setStatus(RoomStatus.AVAILABLE);
         roomRepository.save(room);
         System.out.println("Oda " + roomId + " AVAILABLE olarak güncellendi: " + LocalDateTime.now());
