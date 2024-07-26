@@ -1,5 +1,6 @@
 package com.example.easystay.core.tasks;
 
+import com.example.easystay.core.exceptionhandling.exception.problemdetails.ErrorMessages;
 import com.example.easystay.core.exceptionhandling.exception.types.BusinessException;
 import com.example.easystay.model.entity.Reservation;
 import com.example.easystay.model.entity.Room;
@@ -42,7 +43,7 @@ public class ScheduledTasks {
     }
     // Business Rules
     private void markRoomAsAvailable(Long roomId) {
-        Room room = roomRepository.findById(roomId).orElseThrow(() -> new BusinessException("Bu id'ye sahip bir kullanıcı bulunamadı."));
+        Room room = roomRepository.findById(roomId).orElseThrow(() -> new BusinessException(ErrorMessages.USER_NOT_FOUND));
         room.setStatus(RoomStatus.AVAILABLE);
         roomRepository.save(room);
         System.out.println("Oda " + roomId + " AVAILABLE olarak güncellendi: " + LocalDateTime.now());
