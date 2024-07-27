@@ -18,7 +18,7 @@ This project is a comprehensive Hotel Management Web Application. It allows user
 - Swagger
 - Lombok
 - JWT
-- **Frontend**: Angular,Javascript,Typescript
+- **Frontend**: Angular & Angular CLI 17.3.7,Javascript,Typescript
 - Node.js
 - **Database**: PostgreSQL
 
